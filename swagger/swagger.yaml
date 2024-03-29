@@ -1,0 +1,134 @@
+paths:
+  /create-pricing:
+    post:
+      summary: Create pricing information
+      description: Endpoint to create pricing information for a specific item and organization
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                organization_id:
+                  type: string
+                item_id:
+                  type: string
+                zone:
+                  type: string
+                base_distance_in_km:
+                  type: number
+                km_price:
+                  type: number
+                fix_price:
+                  type: number
+              required:
+                - id
+                - organization_id
+                - item_id
+                - zone
+                - base_distance_in_km
+                - km_price
+                - fix_price
+      responses:
+        "200":
+          description: Successfully created pricing information
+        "400":
+          description: Bad request - Invalid parameters
+        "500":
+          description: Internal server error
+  /create-item:
+    post:
+      summary: Create a new item
+      description: Endpoint to create a new item
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                type:
+                  type: string
+                description:
+                  type: string
+              required:
+                - id
+                - type
+                - description
+      responses:
+        "200":
+          description: Successfully created item
+        "400":
+          description: Bad request - Invalid parameters
+        "500":
+          description: Internal server error
+  /create-organization:
+    post:
+      summary: Create organization
+      description: Endpoint to create a new organization
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                name:
+                  type: string
+              required:
+                - id
+                - name
+      responses:
+        "200":
+          description: Successfully created organization
+        "400":
+          description: Bad request - Invalid parameters
+        "500":
+          description: Internal server error
+  /create-pricing:
+    post:
+      summary: Create pricing information
+      description: Endpoint to create pricing information for a specific item and organization
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                organization_id:
+                  type: string
+                item_id:
+                  type: string
+                zone:
+                  type: string
+                base_distance_in_km:
+                  type: number
+                km_price:
+                  type: number
+                fix_price:
+                  type: number
+              required:
+                - id
+                - organization_id
+                - item_id
+                - zone
+                - base_distance_in_km
+                - km_price
+                - fix_price
+      responses:
+        '200':
+          description: Successfully created pricing information
+        '400':
+          description: Bad request - Invalid parameters
+        '500':
+          description: Internal server error
