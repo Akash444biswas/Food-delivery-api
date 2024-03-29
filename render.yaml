@@ -1,0 +1,9 @@
+services:
+  - name: my-nodejs-app
+    type: web
+    env: node
+    buildCommand: |
+      npm install                  # Install dependencies
+      npx prisma migrate dev      # Run Prisma migrations
+      npm run build               # Build your application (if needed)
+    startCommand: npm start # Start your application
